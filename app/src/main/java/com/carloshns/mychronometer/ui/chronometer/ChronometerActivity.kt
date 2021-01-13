@@ -50,7 +50,7 @@ class ChronometerActivity : AppCompatActivity() {
         val horas = myIntent.getIntExtra("horas", 0)
         val minutos = myIntent.getIntExtra("minutos", 0)
         val segundos = myIntent.getIntExtra("segundos", 0)
-        
+
         viewModel.horas.postValue(horas)
         viewModel.minutos.postValue(minutos)
         viewModel.segundos.postValue(segundos)
