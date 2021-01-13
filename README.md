@@ -16,7 +16,7 @@ assim como criei meu próprio componente customizado nativo.
 
 # Layout
 
-<img src="https://github.com/carlos-hns/My-Chronometer/blob/master/gif.mp4" alt="GIF do Layout do Aplicativo"/>
+<img src="https://github.com/carlos-hns/My-Chronometer/blob/master/app.gif" alt="GIF do Layout do Aplicativo"/>
 
 ## 
 Made with love by [Carlos Henrique](https://github.com/carlos-hns) 🐼🖤
