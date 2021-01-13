@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Chronometer</string>
+    <string name="made_by_label">MADE BY</string>
+    <string name="my_name_label">CARLOS-HNS</string>
+    <string name="information_label">Selecione um período de tempo e pressione iniciar.</string>
+    <string name="horas_label">Horas</string>
+    <string name="minutos_label">Minutos</string>
+    <string name="segundos_label">Segundos</string>
+    <string name="tempo_escolhido_label">Tempo Escolhido\n Hora(s): %1$d\n Minuto(s): %2$d\n Segundo(s): %3$d</string>
+</resources>

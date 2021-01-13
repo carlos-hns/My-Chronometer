@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.carloshns.mychronometer.data.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainActivity"
+
+        android:background="@color/purpleblue">
+
+        <TextView
+            android:id="@+id/information_textView"
+            android:layout_width="300dp"
+            android:layout_height="120dp"
+
+            android:layout_marginTop="100dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:gravity="center"
+            android:text="@string/information_label"
+            android:textSize="30sp"
+            android:textColor="@color/neongreenblue"
+            android:fontFamily="@font/robotothin" />
+
+
+        <TextView
+            android:id="@+id/horas_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="100dp"
+
+            app:layout_constraintStart_toStartOf="@id/horas_numberPicker"
+            app:layout_constraintEnd_toEndOf="@+id/horas_numberPicker"
+            app:layout_constraintTop_toBottomOf="@+id/information_textView"
+
+            android:text="@string/horas_label"
+            android:textSize="10sp"
+            android:textColor="@color/neongreenblue"
+            android:fontFamily="@font/robotolight"
+            />
+
+        <com.carloshns.mychronometer.scrollablenumberpicker.ScrollableNumberPicker
+            android:id="@+id/horas_numberPicker"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginBottom="20dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horas_textView"
+
+            app:number="@={viewModel.horas}"
+            app:max_number="24"
+            app:number_size="20sp"
+            app:bars_size_percent="10" />
+
+        <TextView
+            android:id="@+id/minutos_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="100dp"
+
+            app:layout_constraintStart_toStartOf="@id/minutos_numberPicker"
+            app:layout_constraintEnd_toEndOf="@id/minutos_numberPicker"
+            app:layout_constraintTop_toBottomOf="@+id/information_textView"
+
+            android:text="@string/minutos_label"
+            android:textSize="10sp"
+            android:textColor="@color/neongreenblue"
+            android:fontFamily="@font/robotolight" />
+
+
+        <com.carloshns.mychronometer.scrollablenumberpicker.ScrollableNumberPicker
+            android:id="@+id/minutos_numberPicker"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+
+            app:layout_constraintStart_toEndOf="@id/horas_numberPicker"
+            app:layout_constraintEnd_toStartOf="@id/segundos_numberPicker"
+            app:layout_constraintTop_toBottomOf="@+id/minutos_textView"
+
+            app:number="@={viewModel.minutos}"
+            app:max_number="60"
+            app:number_size="20sp"
+            app:bars_size_percent="10" />
+
+
+        <TextView
+            android:id="@+id/segundos_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="100dp"
+
+            app:layout_constraintStart_toStartOf="@id/segundos_numberPicker"
+            app:layout_constraintEnd_toEndOf="@id/segundos_numberPicker"
+            app:layout_constraintTop_toBottomOf="@+id/information_textView"
+
+            android:text="@string/segundos_label"
+            android:textSize="10sp"
+            android:textColor="@color/neongreenblue"
+            android:fontFamily="@font/robotolight" />
+
+        <com.carloshns.mychronometer.scrollablenumberpicker.ScrollableNumberPicker
+            android:id="@+id/segundos_numberPicker"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="110dp"
+            android:layout_marginBottom="20dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/segundos_textView"
+
+
+            app:number="@={viewModel.segundos}"
+            app:max_number="60"
+            app:number_size="20sp"
+            app:bars_size_percent="10" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="60dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:onClick="@{() -> viewModel.onClickButton()}"
+            android:text="Iniciar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

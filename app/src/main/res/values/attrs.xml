@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScrollableNumberPicker">
+        <attr name="number" format="integer"/>
+        <attr name="max_number" format="integer" />
+        <attr name="number_size" format="dimension" />
+        <attr name="bars_size_percent" format="integer" />
+        <attr name="bars_color" format="color"/>
+        <attr name="number_color" format="color"/>
+    </declare-styleable>
+</resources>
