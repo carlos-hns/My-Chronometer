@@ -66,7 +66,6 @@ class ChronometerViewModel: ViewModel() {
         horario += "${if(horas >= 10) horas.toString() else "0${horas}"}:"
         horario += "${if(minutos >= 10) minutos.toString() else "0${minutos}"}:"
         horario += "${if(segundos >= 10) segundos.toString() else "0${segundos}"}"
-        Log.d("xxx", "criarStringHorario: ${horario}")
         return horario
     }
 

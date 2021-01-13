@@ -50,13 +50,7 @@ class ChronometerActivity : AppCompatActivity() {
         val horas = myIntent.getIntExtra("horas", 0)
         val minutos = myIntent.getIntExtra("minutos", 0)
         val segundos = myIntent.getIntExtra("segundos", 0)
-
-
-        Log.d("xxx", "iniciarDados: ${horas}")
-        Log.d("xxx", "iniciarDados: ${minutos}")
-        Log.d("xxx", "iniciarDados: ${segundos}")
-
-
+        
         viewModel.horas.postValue(horas)
         viewModel.minutos.postValue(minutos)
         viewModel.segundos.postValue(segundos)
@@ -64,12 +58,6 @@ class ChronometerActivity : AppCompatActivity() {
         viewModel.horaAtual.postValue(0)
         viewModel.minutoAtual.postValue(0)
         viewModel.segundoAtual.postValue(0)
-    }
-
-    fun reiniciarDados(){
-        viewModel.horaAtual.postValue(viewModel.horas.value)
-        viewModel.minutoAtual.postValue(viewModel.minutos.value)
-        viewModel.segundoAtual.postValue(viewModel.segundos.value)
     }
 
     fun setUpListeners(){
@@ -116,7 +104,7 @@ class ChronometerActivity : AppCompatActivity() {
     }
 
     fun instanciarRelogio(total: Long) {
-        this.clock = object : CountDownTimer(total, 1000) {
+        this.clock = object : CountDownTimer(total + 2000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 viewModel.atualizarRelogio()
                 viewModel.criarEAtualizarHorario()
